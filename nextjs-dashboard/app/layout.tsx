@@ -8,11 +8,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body>
-        <h1>Titulo</h1>
-        <div style={{ border: '1px solid #000', padding: '10px' }}>
-          
-        </div>
+      <body className={'${montserrat.className} antialiased'}>
         {children}
       </body>
     </html>
