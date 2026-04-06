@@ -1,0 +1,75 @@
+
+1. ¿Qué es Next.js y por qué se dice que es el framework de React más popular?
+Permite construir aplicaciones web con renderizado en el servidor (SSR), optimización de SEO, rutas de API integradas y diversas mejoras de rendimiento de forma sencilla.
+
+2. ¿Cuál es el comando exacto con npx para inicializar un proyecto de Next.js asegurando usar la última versión?
+El comando es npx create-next-app@latest.
+
+3. ¿Cuál es el comando utilizado para levantar el entorno de desarrollo y en qué puerto se ejecuta por defecto?
+Se utiliza npm run dev y se ejecuta por defecto en el puerto 3000.
+
+4. ¿Qué función cumple el comando npm run build en un proyecto de Next.js?
+Sirve para crear y empaquetar la aplicación para su despliegue en producción.
+
+5. Describe para qué sirven las carpetas public y app.
+La carpeta public sirve para almacenar archivos estáticos como imágenes, vídeos o audios que se sirven directamente. La carpeta app contiene el sistema de rutas y la lógica principal de la aplicación.
+
+6. ¿Qué es un CSS MODULE y cómo se usan?
+Es una forma nativa de Next.js para manejar estilos mediante archivos con extensión .module.css. Se usan importando los estilos como un objeto en el archivo de componente (ej. import styles from './home.module.css') y aplicándolos a través de className={styles.nombre}, lo que genera identificadores únicos para evitar colisiones.
+
+7. ¿Qué hace el componente Layout.tsx?
+Es un componente que envuelve las páginas y permite compartir elementos de interfaz (como menús o pies de página) entre múltiples rutas sin que estos se vuelvan a renderizar al navegar.
+
+8. ¿Qué es el enrutamiento?
+Es el sistema que define cómo el usuario navega a través de diferentes secciones o páginas de la aplicación mediante URLs.
+
+9. ¿Cuál es la diferencia entre Image e img?
+El componente Image de Next.js optimiza automáticamente el tamaño y formato de las imágenes, evita saltos de diseño (layout shift) al requerir dimensiones fijas y utiliza carga perezosa (lazy load) por defecto, a diferencia de la etiqueta img estándar de HTML.
+
+10. ¿Qué es el Lazy Load?
+Es una técnica de optimización donde los recursos (como imágenes) no se descargan hasta que son necesarios, por ejemplo cuando entran en el campo de visión del usuario al hacer scroll.
+
+11. ¿Cuál es el funcionamiento del siguiente código, en qué momento se muestra cada imagen?
+La primera imagen (hero-desktop.png) se muestra solo en pantallas grandes mediante la clase hidden md:block. La segunda imagen (hero-mobile.png) se muestra solo en dispositivos móviles mediante block md:hidden.
+
+12. ¿Cómo funciona el enrutamiento en Next.js?
+Funciona mediante un sistema basado en archivos (File System Routing); cada carpeta creada dentro del directorio app se convierte automáticamente en una ruta de la aplicación.
+
+13. ¿Qué es una ruta en el contexto web y dónde las hemos visto en la clase?
+Es una dirección URL que identifica una página. En la clase se ven al crear carpetas como /dashboard, /dashboard/customers e /dashboard/invoices.
+
+14. ¿Qué arrojó a MiduDev el localhost:3000/dashboard, donde hemos visto esos errores en la clase?
+Arrojó un error 404 porque la carpeta y la ruta aún no habían sido creadas en el sistema de archivos.
+
+15. ¿Qué arrojó a MiduDev el localhost:3000/dashboard, donde hemos visto esos errores en la clase?
+Nuevamente, muestra el error 404 inicial antes de que se defina el archivo page.tsx dentro de la carpeta correspondiente.
+
+16. ¿Qué es el File System Routing?
+Es el enrutado basado en el sistema de archivos, donde la estructura de carpetas dentro de la carpeta app define automáticamente las URLs disponibles en el sitio web.
+
+17. ¿Cómo funcionan las rutas anidadas?
+Se crean colocando carpetas dentro de otras carpetas. Por ejemplo, al poner una carpeta customers dentro de dashboard, la ruta resultante es /dashboard/customers.
+
+18. ¿Por qué es necesario esto? (Referente a export default function)
+Es necesario porque Next.js requiere que cada archivo de página o layout exporte una función por defecto para poder identificar y renderizar el componente correspondiente a esa ruta.
+
+19. ¿Para qué sirve el componente Link?
+Sirve para realizar navegaciones entre páginas del lado del cliente de forma fluida, evitando recargar toda la página y manteniendo el estado de la aplicación.
+
+20. ¿Qué se carga cuando usamos <a> y qué cuando se usa <Link>?
+Con <a> se realiza una recarga completa de la página y todos sus recursos. Con <Link> solo se descarga el contenido mínimo necesario para la nueva ruta, haciendo la transición casi instantánea.
+
+21. ¿Qué es un Hook?
+Son funciones especiales de React que permiten utilizar el estado y otras características del framework en componentes funcionales.
+
+22. ¿Qué hooks usa Midu?
+En el video utiliza el hook usePathname para obtener la ruta actual y resaltar los enlaces activos en la navegación.
+
+23. ¿Por qué ocurre el siguiente error? (Error: usePathname solo funciona en Client Components)
+Ocurre porque se intentó usar un hook en un componente de servidor por defecto. Los hooks solo funcionan en componentes de cliente, por lo que se debe añadir la directiva "use client" al inicio del archivo.
+
+24. ¿Es posible ejecutar los componentes de React en el cliente y el servidor?
+Sí, Next.js permite ejecutar componentes en el servidor por defecto para mejorar el rendimiento, y en el cliente mediante la directiva "use client" para añadir interactividad.
+
+25. ¿Qué es el code splitting?
+Es una técnica que divide el código de la aplicación en partes más pequeñas, permitiendo que el navegador descargue solo el JavaScript necesario para la página que el usuario está visitando.
